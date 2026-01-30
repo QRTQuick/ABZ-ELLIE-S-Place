@@ -289,7 +289,7 @@ const CurrentStock: React.FC = () => {
               <motion.button
                 onClick={() => {
                   const message = encodeURIComponent("Hi! I'd like to be notified about new arrivals and stock updates.");
-                  window.open(`https://wa.me/234${COMPANY_INFO.phones[0].slice(1)}?text=${message}`, '_blank');
+                  window.open(`https://wa.me/234${COMPANY_INFO.phones[1].slice(1)}?text=${message}`, '_blank');
                 }}
                 whileHover={{ scale: 1.05 }}
                 className="px-8 py-4 border-2 border-slate-300 text-slate-700 rounded-2xl font-bold hover:border-slate-400 transition-all"

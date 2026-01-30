@@ -5,7 +5,7 @@ export const COMPANY_INFO = {
   name: "ABZ&ELLIE'S Place",
   tagline: "Where Sparkle meets Style",
   description: "ABZ& ELLIE'S Place is an online store specializing in quality perfumes, beauty products, and stylish jewelry for men, women, and couples. We provide affordable, trendy, and elegant items suitable for gifting and personal use.",
-  phones: ["09033564255"]
+  phones: ["09033564255", "09032105964"]
 };
 
 export const MOCK_PRODUCTS: Product[] = [

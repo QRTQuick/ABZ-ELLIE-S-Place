@@ -61,8 +61,8 @@ const Footer: React.FC = () => {
                 <span>{COMPANY_INFO.phones[0]}</span>
               </li>
               <li className="flex items-center space-x-3">
-                <MessageCircle size={18} className="text-green-500" />
-                <span>WhatsApp Available</span>
+                <Phone size={18} className="text-red-500" />
+                <span>{COMPANY_INFO.phones[1]}</span>
               </li>
             </ul>
           </div>

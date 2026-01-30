@@ -13,7 +13,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   title = "ABZ&ELLIE'S Place | Premium Perfumes, Jewelry & Beauty Products Nigeria",
   description = "Discover authentic perfumes, elegant jewelry, couple items, and beauty products at ABZ&ELLIE'S Place. Premium quality, fast delivery across Nigeria. Price range ₦21,000 - ₦100,000.",
   keywords = "perfumes Nigeria, jewelry Nigeria, couple items, lip gloss, beauty products, authentic perfumes, premium jewelry, ABZ ELLIE, online shopping Nigeria, luxury accessories",
-  image = "https://abz-ellie-s-place.vercel.app/pic/WhatsApp Image 2026-01-30 at 2.53.19 PM.jpeg",
+  image = "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=1200&h=630",
   url = "https://abz-ellie-s-place.vercel.app/",
   type = "website"
 }) => {

@@ -19,14 +19,14 @@ const CurrentStock: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [selectedItem, setSelectedItem] = useState<StockItem | null>(null);
 
-  // Stock items using the images from pic folder
+  // Stock items using high-quality external images
   const stockItems: StockItem[] = [
     {
       id: '1',
       name: 'Premium Perfume Collection',
       category: 'Perfumes',
       priceRange: '₦25,000 - ₦85,000',
-      image: '/pic/WhatsApp Image 2026-01-30 at 2.53.19 PM.jpeg',
+      image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=500&h=500',
       description: 'Luxury fragrances from top international brands. Long-lasting and authentic.',
       availability: 'In Stock'
     },
@@ -35,7 +35,7 @@ const CurrentStock: React.FC = () => {
       name: 'Elegant Jewelry Set',
       category: 'Jewelry',
       priceRange: '₦30,000 - ₦100,000',
-      image: '/pic/WhatsApp Image 2026-01-30 at 2.53.19 PM (1).jpeg',
+      image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=500&h=500',
       description: 'Stunning jewelry pieces perfect for special occasions and everyday elegance.',
       availability: 'In Stock'
     },
@@ -44,7 +44,7 @@ const CurrentStock: React.FC = () => {
       name: 'Couple Accessories',
       category: 'Couple Items',
       priceRange: '₦21,000 - ₦65,000',
-      image: '/pic/WhatsApp Image 2026-01-30 at 2.53.19 PM (2).jpeg',
+      image: 'https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&q=80&w=500&h=500',
       description: 'Matching accessories for couples. Express your bond with style.',
       availability: 'Limited'
     },
@@ -53,7 +53,7 @@ const CurrentStock: React.FC = () => {
       name: 'Beauty Essentials',
       category: 'Beauty',
       priceRange: '₦15,000 - ₦45,000',
-      image: '/pic/WhatsApp Image 2026-01-30 at 2.53.20 PM.jpeg',
+      image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=500&h=500',
       description: 'High-quality beauty products including lip glosses and skincare items.',
       availability: 'In Stock'
     },
@@ -62,7 +62,7 @@ const CurrentStock: React.FC = () => {
       name: 'Luxury Watch Collection',
       category: 'Accessories',
       priceRange: '₦40,000 - ₦100,000',
-      image: '/pic/WhatsApp Image 2026-01-30 at 2.53.20 PM (1).jpeg',
+      image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=500&h=500',
       description: 'Premium timepieces that combine functionality with sophisticated design.',
       availability: 'Pre-Order'
     }

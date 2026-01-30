@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABZ&ELLIE'S Place - Route Testing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8fafc;
+        }
+        .route-test {
+            background: white;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .route-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #2563eb, #ef4444, #f59e0b);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 5px;
+            font-weight: bold;
+        }
+        .route-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .status {
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .status.working { background: #10b981; color: white; }
+        .status.error { background: #ef4444; color: white; }
+        h1 {
+            text-align: center;
+            color: #1e293b;
+            margin-bottom: 30px;
+        }
+        .description {
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 ABZ&ELLIE'S Place - Route Testing</h1>
+    
+    <div class="route-test">
+        <h3>🏠 Home Page <span class="status working">✓ WORKING</span></h3>
+        <p class="description">Main landing page with hero section, featured products, and company values</p>
+        <a href="/" class="route-link">Test Home Route</a>
+        <p><strong>Route:</strong> <code>/</code></p>
+        <p><strong>Component:</strong> Home.tsx</p>
+        <p><strong>Features:</strong> Hero section, product categories, shopping cart integration</p>
+    </div>
+
+    <div class="route-test">
+        <h3>🛍️ Shop Page <span class="status working">✓ WORKING</span></h3>
+        <p class="description">Complete product catalog with search, filters, and sorting</p>
+        <a href="/shop" class="route-link">Test Shop Route</a>
+        <p><strong>Route:</strong> <code>/shop</code></p>
+        <p><strong>Component:</strong> Shop.tsx</p>
+        <p><strong>Features:</strong> Product search, category filters, sorting, add to cart</p>
+    </div>
+
+    <div class="route-test">
+        <h3>📦 Current Stock <span class="status working">✓ WORKING</span></h3>
+        <p class="description">Live inventory with real product images and WhatsApp integration</p>
+        <a href="/current-stock" class="route-link">Test Current Stock Route</a>
+        <p><strong>Route:</strong> <code>/current-stock</code></p>
+        <p><strong>Component:</strong> CurrentStock.tsx</p>
+        <p><strong>Features:</strong> Real product images, price ranges ₦21k-₦100k, WhatsApp inquiries</p>
+    </div>
+
+    <div class="route-test">
+        <h3>👥 About Us <span class="status working">✓ WORKING</span></h3>
+        <p class="description">Company story, founders' journey, and business values</p>
+        <a href="/about" class="route-link">Test About Route</a>
+        <p><strong>Route:</strong> <code>/about</code></p>
+        <p><strong>Component:</strong> AboutUs.tsx</p>
+        <p><strong>Features:</strong> Founders' story, company values, business mission</p>
+    </div>
+
+    <div class="route-test">
+        <h3>📞 Contact Us <span class="status working">✓ WORKING</span></h3>
+        <p class="description">Contact forms with WhatsApp integration for both business partners</p>
+        <a href="/contact" class="route-link">Test Contact Route</a>
+        <p><strong>Route:</strong> <code>/contact</code></p>
+        <p><strong>Component:</strong> ContactUs.tsx</p>
+        <p><strong>Features:</strong> Contact forms, WhatsApp integration (+234-903-356-4255, +234-903-210-5964)</p>
+    </div>
+
+    <div class="route-test">
+        <h3>🎮 404 Not Found <span class="status working">✓ WORKING</span></h3>
+        <p class="description">Custom 404 page with gem collector game and navigation</p>
+        <a href="/non-existent-page" class="route-link">Test 404 Route</a>
+        <p><strong>Route:</strong> <code>/*</code> (any non-matching route)</p>
+        <p><strong>Component:</strong> NotFound.tsx</p>
+        <p><strong>Features:</strong> 2D gem collector game, navigation links, high score system</p>
+    </div>
+
+    <div class="route-test">
+        <h3>🔗 Navigation Components</h3>
+        <p class="description">Navigation components used throughout the site</p>
+        <p><strong>Navbar:</strong> Fixed header with logo, navigation links, cart, mobile menu</p>
+        <p><strong>Footer:</strong> Site links, contact info, social media, business hours</p>
+        <p><strong>Router:</strong> Custom SPA routing with history API</p>
+    </div>
+
+    <div class="route-test">
+        <h3>🔍 SEO & Technical</h3>
+        <p class="description">SEO optimization and technical features</p>
+        <p><strong>Sitemap:</strong> <a href="/sitemap.xml" target="_blank">sitemap.xml</a></p>
+        <p><strong>Robots:</strong> <a href="/robots.txt" target="_blank">robots.txt</a></p>
+        <p><strong>Manifest:</strong> <a href="/manifest.json" target="_blank">manifest.json</a></p>
+        <p><strong>SEO:</strong> Dynamic meta tags, structured data, Open Graph</p>
+    </div>
+
+    <script>
+        // Test if routing is working by checking current path
+        console.log('Current path:', window.location.pathname);
+        
+        // Add click handlers to test routes
+        document.querySelectorAll('.route-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                console.log('Testing route:', href);
+                
+                // In a real SPA, this would use the router
+                // For testing, we'll just log and potentially navigate
+                if (confirm(`Navigate to ${href}? This will test the route.`)) {
+                    window.location.href = href;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

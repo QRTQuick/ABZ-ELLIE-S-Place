@@ -1,6 +1,10 @@
 // Simple sitemap generator for ABZ&ELLIE'S Place
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const baseUrl = 'https://abz-ellie-s-place.vercel.app';
 const currentDate = new Date().toISOString().split('T')[0];
@@ -59,8 +63,8 @@ ${pages.map(page => `  <url>
 };
 
 // Run if called directly
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   generateSitemap();
 }
 
-module.exports = { generateSitemap };
+export { generateSitemap };

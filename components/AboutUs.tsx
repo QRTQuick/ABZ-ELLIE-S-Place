@@ -65,17 +65,17 @@ const AboutUs: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             className="relative"
           >
-            <div className="grid grid-cols-2 gap-6">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300" 
-                className="rounded-3xl shadow-xl aspect-[3/4] object-cover"
-                alt="Founder 1"
+                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800&h=600" 
+                className="w-full h-96 object-cover"
+                alt="Beautiful beach representing friendship and dreams - the foundation of ABZ&ELLIE'S Place"
               />
-              <img 
-                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=300" 
-                className="rounded-3xl shadow-xl aspect-[3/4] object-cover mt-12"
-                alt="Founder 2"
-              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+              <div className="absolute bottom-6 left-6 text-white">
+                <p className="text-sm font-medium opacity-90">Where dreams meet the horizon</p>
+                <p className="text-xs opacity-75">Just like our friendship-built business</p>
+              </div>
             </div>
             <div className="absolute -bottom-6 -left-6 w-24 h-24 animated-gradient-bg rounded-full flex items-center justify-center text-white shadow-2xl">
               <Heart size={32} />

@@ -194,21 +194,18 @@ const ContactUs: React.FC = () => {
                   </div>
                 </div>
                 <div className="space-y-3">
-                  {COMPANY_INFO.phones.map((phone, index) => (
-                    <motion.button
-                      key={phone}
-                      onClick={() => handleWhatsAppContact(phone)}
-                      whileHover={{ scale: 1.02 }}
-                      className="w-full p-3 bg-white border border-green-200 rounded-xl text-left hover:border-green-300 transition-all"
-                    >
-                      <div className="flex items-center justify-between">
-                        <span className="font-medium text-slate-900">{phone}</span>
-                        <span className="text-xs text-green-600 font-bold">
-                          {index === 0 ? 'Primary' : 'Secondary'}
-                        </span>
-                      </div>
-                    </motion.button>
-                  ))}
+                  <motion.button
+                    onClick={() => handleWhatsAppContact(COMPANY_INFO.phones[0])}
+                    whileHover={{ scale: 1.02 }}
+                    className="w-full p-3 bg-white border border-green-200 rounded-xl text-left hover:border-green-300 transition-all"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="font-medium text-slate-900">{COMPANY_INFO.phones[0]}</span>
+                      <span className="text-xs text-green-600 font-bold">
+                        Business Line
+                      </span>
+                    </div>
+                  </motion.button>
                 </div>
               </div>
 

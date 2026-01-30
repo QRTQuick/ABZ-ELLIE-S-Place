@@ -123,7 +123,7 @@ const Home: React.FC<HomeProps> = ({ cart, addToCart }) => {
           {[
             { icon: <Sparkles />, title: "Premium Origin", desc: "Every bottle and piece is verified for 100% authenticity and quality." },
             { icon: <ShoppingBag />, title: "Gift Couture", desc: "Complimentary luxury packaging with every purchase. Ready to delight." },
-            { icon: <Phone />, title: "Stylist Support", desc: "Ellie, our AI, and our human experts are available 24/7 for you." }
+            { icon: <Phone />, title: "Stylist Support", desc: "Lux, our AI, and our human experts are available 24/7 for you." }
           ].map((item, i) => (
             <motion.div 
               key={i}

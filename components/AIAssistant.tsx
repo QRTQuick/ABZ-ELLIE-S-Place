@@ -7,7 +7,7 @@ import { ChatMessage } from '../types';
 const AIAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { role: 'model', text: "Hello! I'm Ellie, your style consultant. Looking for a specific scent or piece of jewelry today?", timestamp: Date.now() }
+    { role: 'model', text: "Hello! I'm Lux, your luxury style consultant. Looking for a specific scent or piece of jewelry today?", timestamp: Date.now() }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -57,7 +57,7 @@ const AIAssistant: React.FC = () => {
               <Sparkles size={20} />
             </div>
             <div>
-              <h3 className="font-bold font-serif text-lg">Ellie Assistant</h3>
+              <h3 className="font-bold font-serif text-lg">Lux Assistant</h3>
               <p className="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Online & Ready to Help</p>
             </div>
           </div>
@@ -75,7 +75,7 @@ const AIAssistant: React.FC = () => {
                     {msg.text}
                   </div>
                   <span className="text-[10px] text-slate-400 mt-1 uppercase font-bold">
-                    {msg.role === 'user' ? 'You' : 'Ellie'}
+                    {msg.role === 'user' ? 'You' : 'Lux'}
                   </span>
                 </div>
               </div>
@@ -97,7 +97,7 @@ const AIAssistant: React.FC = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-              placeholder="Ask Ellie anything..."
+              placeholder="Ask Lux anything..."
               className="flex-1 bg-slate-100 border-none rounded-full px-4 py-2.5 text-sm focus:ring-2 focus:ring-blue-600 outline-none"
             />
             <button 

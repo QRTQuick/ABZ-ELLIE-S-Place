@@ -14,7 +14,7 @@ import DebugPanel from './components/DebugPanel';
 import { Router, useRouter } from './components/Router';
 import { MOCK_PRODUCTS, COMPANY_INFO } from './constants';
 import { Product, CartItem, Category } from './types';
-import { ShoppingBag, X, Trash2, ArrowRight, Sparkles, Phone, ShieldCheck } from 'lucide-react';
+import { ShoppingBag, X, Trash2, ArrowRight, Sparkles, Phone, ShieldCheck, MessageCircle } from 'lucide-react';
 
 const AppContent: React.FC = () => {
   const { currentPath } = useRouter();
@@ -49,6 +49,51 @@ const AppContent: React.FC = () => {
 
   const removeFromCart = (id: string) => {
     setCart(prev => prev.filter(item => item.id !== id));
+  };
+
+  const handleCompletePurchase = () => {
+    if (cart.length === 0) return;
+
+    // Show confirmation dialog
+    const confirmed = window.confirm(
+      `🛍️ Complete your order via WhatsApp?\n\n` +
+      `Total: ₦${cartTotal.toLocaleString()}\n` +
+      `Items: ${cart.length} product${cart.length > 1 ? 's' : ''}\n\n` +
+      `This will open WhatsApp with your order details pre-filled. You can then send it to ABZ&ELLIE'S Place to complete your purchase.`
+    );
+
+    if (!confirmed) return;
+
+    // Create order summary
+    const orderItems = cart.map(item => 
+      `• ${item.name} (${item.category}) - ₦${item.price.toLocaleString()} × ${item.quantity} = ₦${(item.price * item.quantity).toLocaleString()}`
+    ).join('\n');
+
+    const orderSummary = `🛍️ *NEW ORDER FROM ABZ&ELLIE'S PLACE*
+
+📦 *Order Details:*
+${orderItems}
+
+💰 *Total Amount: ₦${cartTotal.toLocaleString()}*
+
+👤 *Customer Information:*
+Please provide your:
+- Full Name
+- Delivery Address
+- Phone Number
+- Preferred Payment Method
+
+📞 *Next Steps:*
+We'll confirm your order details and arrange delivery. Thank you for choosing ABZ&ELLIE'S Place!
+
+✨ Where Sparkle Meets Style ✨`;
+
+    // Send to primary WhatsApp number
+    const whatsappUrl = `https://wa.me/234${COMPANY_INFO.phones[0].slice(1)}?text=${encodeURIComponent(orderSummary)}`;
+    window.open(whatsappUrl, '_blank');
+    
+    // Close cart after sending order
+    setIsCartOpen(false);
   };
 
   const cartTotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
@@ -149,15 +194,17 @@ const AppContent: React.FC = () => {
                     <span className="text-3xl font-serif font-bold text-slate-900">₦{cartTotal.toLocaleString()}</span>
                   </div>
                   <motion.button 
+                    onClick={handleCompletePurchase}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full py-5 animated-gradient-bg text-white rounded-2xl font-bold shadow-2xl hover:shadow-blue-500/20 transition-all text-sm uppercase tracking-[0.2em]"
+                    className="w-full py-5 animated-gradient-bg text-white rounded-2xl font-bold shadow-2xl hover:shadow-blue-500/20 transition-all text-sm uppercase tracking-[0.2em] flex items-center justify-center space-x-2"
                   >
-                    Complete Purchase
+                    <MessageCircle size={20} />
+                    <span>Complete Purchase via WhatsApp</span>
                   </motion.button>
                   <div className="flex items-center justify-center space-x-2 text-[9px] uppercase tracking-widest font-bold text-slate-400">
-                    <ShieldCheck size={12} className="text-blue-500" />
-                    <span>Secure Encrypted Checkout</span>
+                    <MessageCircle size={12} className="text-green-500" />
+                    <span>Secure WhatsApp Ordering</span>
                   </div>
                 </div>
               )}

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Sparkles, Instagram, Facebook, Twitter, Phone } from 'lucide-react';
+import { Sparkles, Instagram, Facebook, Twitter, Phone, MessageCircle } from 'lucide-react';
 import { COMPANY_INFO } from '../constants';
 import { Link } from './Router';
 
@@ -61,8 +61,8 @@ const Footer: React.FC = () => {
                 <span>{COMPANY_INFO.phones[0]}</span>
               </li>
               <li className="flex items-center space-x-3">
-                <Phone size={18} className="text-red-500" />
-                <span>{COMPANY_INFO.phones[1]}</span>
+                <MessageCircle size={18} className="text-green-500" />
+                <span>WhatsApp Available</span>
               </li>
             </ul>
           </div>

@@ -1,0 +1,7 @@
+{
+  "name": "ABZ&ELLIE'S Place",
+  "description": "A modern, high-end online boutique specializing in quality perfumes, stylish jewelry, and beauty products with an integrated AI fashion consultant.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

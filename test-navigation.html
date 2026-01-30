@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .nav { margin-bottom: 20px; }
+        .nav a { margin-right: 10px; padding: 10px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; }
+        .nav a:hover { background: #0056b3; }
+        .content { padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Navigation Test</h1>
+    
+    <div class="nav">
+        <a href="#" onclick="navigate('/')">Home</a>
+        <a href="#" onclick="navigate('/shop')">Shop</a>
+        <a href="#" onclick="navigate('/about')">About</a>
+        <a href="#" onclick="navigate('/contact')">Contact</a>
+        <a href="#" onclick="navigate('/current-stock')">Current Stock</a>
+    </div>
+    
+    <div class="content">
+        <h2>Current Path: <span id="currentPath">/</span></h2>
+        <div id="pageContent">Home Page Content</div>
+    </div>
+
+    <script>
+        let currentPath = '/';
+        
+        function navigate(path) {
+            currentPath = path;
+            window.history.pushState({}, '', path);
+            updatePage();
+        }
+        
+        function updatePage() {
+            document.getElementById('currentPath').textContent = currentPath;
+            const content = document.getElementById('pageContent');
+            
+            switch(currentPath) {
+                case '/':
+                    content.innerHTML = '<h3>Home Page</h3><p>Welcome to ABZ&ELLIE\'S Place!</p>';
+                    break;
+                case '/shop':
+                    content.innerHTML = '<h3>Shop Page</h3><p>Browse our products here.</p>';
+                    break;
+                case '/about':
+                    content.innerHTML = '<h3>About Us</h3><p>Learn about our story.</p>';
+                    break;
+                case '/contact':
+                    content.innerHTML = '<h3>Contact Us</h3><p>Get in touch with us.</p>';
+                    break;
+                case '/current-stock':
+                    content.innerHTML = '<h3>Current Stock</h3><p>View our current inventory.</p>';
+                    break;
+                default:
+                    content.innerHTML = '<h3>404 Not Found</h3><p>Page not found.</p>';
+            }
+        }
+        
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', function() {
+            currentPath = window.location.pathname;
+            updatePage();
+        });
+        
+        // Initialize
+        currentPath = window.location.pathname;
+        updatePage();
+    </script>
+</body>
+</html>

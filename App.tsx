@@ -10,6 +10,7 @@ import NotFound from './components/NotFound';
 import AIAssistant from './components/AIAssistant';
 import Footer from './components/Footer';
 import Analytics from './components/Analytics';
+import DebugPanel from './components/DebugPanel';
 import { Router, useRouter } from './components/Router';
 import { MOCK_PRODUCTS, COMPANY_INFO } from './constants';
 import { Product, CartItem, Category } from './types';
@@ -22,10 +23,18 @@ const AppContent: React.FC = () => {
     return saved ? JSON.parse(saved) : [];
   });
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
 
   useEffect(() => {
     localStorage.setItem('abz_cart', JSON.stringify(cart));
   }, [cart]);
+
+  useEffect(() => {
+    // Show loading state briefly when path changes
+    setIsNavigating(true);
+    const timer = setTimeout(() => setIsNavigating(false), 100);
+    return () => clearTimeout(timer);
+  }, [currentPath]);
 
   const addToCart = (product: Product) => {
     setCart(prev => {
@@ -66,10 +75,13 @@ const AppContent: React.FC = () => {
       <Analytics />
       <Navbar cartCount={cart.reduce((a, b) => a + b.quantity, 0)} onOpenCart={() => setIsCartOpen(true)} />
       
-      {renderPage()}
+      <div key={currentPath} className={`transition-opacity duration-200 ${isNavigating ? 'opacity-50' : 'opacity-100'}`}>
+        {renderPage()}
+      </div>
 
       <Footer />
       <AIAssistant />
+      <DebugPanel />
 
       {/* Modern Cart Drawer */}
       <AnimatePresence>

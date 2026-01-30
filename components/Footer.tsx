@@ -2,6 +2,7 @@
 import React from 'react';
 import { Sparkles, Instagram, Facebook, Twitter, Phone } from 'lucide-react';
 import { COMPANY_INFO } from '../constants';
+import { Link } from './Router';
 
 const Footer: React.FC = () => {
   return (
@@ -44,10 +45,11 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-white font-bold uppercase tracking-widest text-xs mb-8">Quick Links</h3>
             <ul className="space-y-4 text-sm">
-              <li><a href="#" className="hover:text-white transition-colors">About Our Brand</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Shipping Policy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Return & Exchange</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Track Order</a></li>
+              <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
+              <li><Link to="/shop" className="hover:text-white transition-colors">Shop</Link></li>
+              <li><Link to="/current-stock" className="hover:text-white transition-colors">Current Stock</Link></li>
+              <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -66,12 +68,12 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-800 flex flex-col md:row items-center justify-between text-[10px] uppercase tracking-[0.2em] font-bold">
-          <p>© 2024 ABZ&ELLIE'S Place. All Rights Reserved.</p>
+        <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between text-[10px] uppercase tracking-[0.2em] font-bold">
+          <p>© 2026 ABZ&ELLIE'S Place. All Rights Reserved.</p>
           <div className="flex items-center space-x-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white">Privacy</a>
-            <a href="#" className="hover:text-white">Terms</a>
-            <a href="#" className="hover:text-white">Cookies</a>
+            <a href="/privacy" className="hover:text-white">Privacy</a>
+            <a href="/terms" className="hover:text-white">Terms</a>
+            <a href="/sitemap.xml" className="hover:text-white">Sitemap</a>
           </div>
         </div>
       </div>

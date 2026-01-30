@@ -1,22 +1,75 @@
 
 {
-  "name": "ABZ&ELLIE'S Place",
-  "short_name": "ABZ&ELLIE",
-  "description": "Where Sparkle meets Style",
+  "name": "ABZ&ELLIE'S Place - Premium Perfumes & Jewelry Nigeria",
+  "short_name": "ABZ&ELLIE'S",
+  "description": "Premium perfumes, jewelry, couple items, and beauty products with authentic quality and fast delivery across Nigeria",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#1e3a8a",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-NG",
+  "categories": ["shopping", "lifestyle", "beauty"],
   "icons": [
     {
       "src": "https://picsum.photos/192/192",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
     },
     {
       "src": "https://picsum.photos/512/512",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/pic/WhatsApp Image 2026-01-30 at 2.53.19 PM.jpeg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "platform": "wide",
+      "label": "ABZ&ELLIE'S Place Homepage"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Shop Now",
+      "short_name": "Shop",
+      "description": "Browse our complete product collection",
+      "url": "/shop",
+      "icons": [
+        {
+          "src": "https://picsum.photos/192/192",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Current Stock",
+      "short_name": "Stock",
+      "description": "View our current inventory",
+      "url": "/current-stock",
+      "icons": [
+        {
+          "src": "https://picsum.photos/192/192",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Contact Us",
+      "short_name": "Contact",
+      "description": "Get in touch via WhatsApp",
+      "url": "/contact",
+      "icons": [
+        {
+          "src": "https://picsum.photos/192/192",
+          "sizes": "192x192"
+        }
+      ]
     }
   ]
 }
